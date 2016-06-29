@@ -33,10 +33,10 @@ import '@angular2-material/toolbar';
 import '@angular2-material/icon';
 // look in src/platform/angular2-material2 and src/platform/providers
 
-import 'ng2-chess';
-import 'ng2-chess/plugins/ui/dom-svg-board';
+//import 'ng2-chess';
+//import 'ng2-chess/plugins/ui/dom-svg-board';
 // import 'ng2-chess/plugins/game/chessjs';
-import 'ng2-chess/plugins/game/chessjs-ai';
+//import 'ng2-chess/plugins/game/chessjs-ai';
 
 if ('production' === ENV) {
   // Production
