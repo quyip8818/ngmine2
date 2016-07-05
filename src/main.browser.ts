@@ -14,7 +14,7 @@ import { ENV_PROVIDERS } from './platform/environment';
 * App Component
 * our top level component that holds all of our components
 */
-import { App, APP_PROVIDERS } from './app';
+import { MyApp } from './app/myapp';
 
 /*
  * Bootstrap our Angular app with a top level component `App` and inject
@@ -22,12 +22,11 @@ import { App, APP_PROVIDERS } from './app';
  */
 export function main(initialHmrState?: any): Promise<any> {
 
-  return bootstrap(App, [
+  return bootstrap(MyApp, [
     ...PROVIDERS,
     ...ENV_PROVIDERS,
     ...DIRECTIVES,
-    ...PIPES,
-    ...APP_PROVIDERS
+    ...PIPES
   ])
   .catch(err => console.error(err));
 

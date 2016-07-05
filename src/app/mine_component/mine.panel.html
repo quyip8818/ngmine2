@@ -1,0 +1,32 @@
+<div>
+    <div>Press "Ctrl" + mouse click to mark the mine</div>
+    <div *ngIf="winLine.length > 0" class="warning">{{winLine}}</div>
+    <div *ngIf="winLine.length == 0" > {{num_mine_left}} mines left</div>
+    <table>
+        <tbody>
+            <tr *ngFor="let row of cells">
+                <td *ngFor="let cell of row">
+                    <button type="button"
+                            class="btn btn-default mine-cell"
+                            [class.disabled-cell]="cell.disabled"
+                            [disabled]="cell.disabled || finished"
+                            (click)="cellClick($event, cell.row, cell.column)">
+                        <div *ngIf="!cell.marked && !cell.bombed" >{{cell.text}}</div>
+                        <img *ngIf="cell.marked" class="img-responsive" src="image/flag.png">
+                        <img *ngIf="cell.bombed" class="img-responsive" src="image/bomb.png">
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<style>
+    .mine-cell {
+        height: 30px;
+        width: 30px;
+        padding: 0px;
+    }
+    .disabled-cell {
+        background-color: gray;
+    }
+</style>
